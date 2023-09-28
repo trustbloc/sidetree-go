@@ -11,16 +11,15 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/trustbloc/logutil-go/pkg/log"
-
 	"github.com/trustbloc/sidetree-go/pkg/api/operation"
 	"github.com/trustbloc/sidetree-go/pkg/api/protocol"
 	"github.com/trustbloc/sidetree-go/pkg/docutil"
 	logfields "github.com/trustbloc/sidetree-go/pkg/internal/log"
+	"github.com/trustbloc/sidetree-go/pkg/log"
 	"github.com/trustbloc/sidetree-go/pkg/versions/1_0/model"
 )
 
-var logger = log.New("sidetree-core-parser")
+var logger = log.New()
 
 // Parser is an operation parser.
 type Parser struct {
@@ -135,8 +134,8 @@ func (p *Parser) ParseOperation(namespace string, operationBuffer []byte, batch 
 	}
 
 	if parseErr != nil {
-		logger.Warn("Error parsing operation for batch", logfields.WithOperation(schema.Operation),
-			logfields.WithIsBatch(batch), log.WithError(parseErr))
+		logger.Debug("Error parsing operation for batch", logfields.WithOperation(schema.Operation),
+			logfields.WithIsBatch(batch), logfields.WithError(parseErr))
 
 		return nil, parseErr
 	}

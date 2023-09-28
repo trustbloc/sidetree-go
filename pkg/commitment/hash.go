@@ -9,16 +9,11 @@ package commitment
 import (
 	"fmt"
 
-	"github.com/trustbloc/logutil-go/pkg/log"
-
 	"github.com/trustbloc/sidetree-go/pkg/canonicalizer"
 	"github.com/trustbloc/sidetree-go/pkg/encoder"
 	"github.com/trustbloc/sidetree-go/pkg/hashing"
-	logfields "github.com/trustbloc/sidetree-go/pkg/internal/log"
 	"github.com/trustbloc/sidetree-go/pkg/jws"
 )
-
-var logger = log.New("sidetree-core-commitment")
 
 // GetCommitment will calculate commitment from JWK.
 func GetCommitment(jwk *jws.JWK, multihashCode uint) (string, error) {
@@ -26,8 +21,6 @@ func GetCommitment(jwk *jws.JWK, multihashCode uint) (string, error) {
 	if err != nil {
 		return "", err
 	}
-
-	logger.Debug("Calculating commitment from JWK", logfields.WithData(data))
 
 	hash, err := hashing.GetHashFromMultihash(multihashCode)
 	if err != nil {

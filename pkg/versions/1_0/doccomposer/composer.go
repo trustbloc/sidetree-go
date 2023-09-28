@@ -12,14 +12,13 @@ import (
 
 	jsonpatch "github.com/evanphx/json-patch"
 
-	"github.com/trustbloc/logutil-go/pkg/log"
-
 	"github.com/trustbloc/sidetree-go/pkg/document"
 	logfields "github.com/trustbloc/sidetree-go/pkg/internal/log"
+	"github.com/trustbloc/sidetree-go/pkg/log"
 	"github.com/trustbloc/sidetree-go/pkg/patch"
 )
 
-var logger = log.New("sidetree-core-composer")
+var logger = log.New()
 
 // DocumentComposer applies patches to the document.
 type DocumentComposer struct {
