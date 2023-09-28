@@ -1,5 +1,5 @@
 # sidetree-go
-This library implements core components required to implement `Sidetree Protocol: <https://github.com/decentralized-identity/sidetree/blob/master/docs/protocol.md>`_
+This library implements core components required to implement the [Sidetree Protocol](https://github.com/decentralized-identity/sidetree/blob/master/docs/protocol.md>).
 
 ## Contributing
 Thank you for your interest in contributing. Please see our [community contribution guidelines](https://github.com/trustbloc/community/blob/main/CONTRIBUTING.md) for more information.
