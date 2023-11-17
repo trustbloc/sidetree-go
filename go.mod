@@ -5,7 +5,7 @@
 module github.com/trustbloc/sidetree-go
 
 require (
-	github.com/btcsuite/btcd v0.22.3
+	github.com/btcsuite/btcd/btcec/v2 v2.1.3
 	github.com/btcsuite/btcutil v1.0.3-0.20201208143702-a53e38424cce
 	github.com/evanphx/json-patch v4.1.0+incompatible
 	github.com/multiformats/go-multibase v0.0.1
@@ -18,6 +18,7 @@ require (
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/minio/blake2b-simd v0.0.0-20160723061019-3f5f724cb5b1 // indirect

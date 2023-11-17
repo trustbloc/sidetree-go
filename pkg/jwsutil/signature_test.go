@@ -16,7 +16,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/btcsuite/btcd/btcec"
+	"github.com/btcsuite/btcd/btcec/v2"
 	gojose "github.com/square/go-jose/v3"
 	"github.com/square/go-jose/v3/json"
 	"github.com/stretchr/testify/require"
