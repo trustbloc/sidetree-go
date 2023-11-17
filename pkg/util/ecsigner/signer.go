@@ -13,7 +13,7 @@ import (
 	"crypto/rand"
 	"errors"
 
-	"github.com/btcsuite/btcd/btcec"
+	"github.com/btcsuite/btcd/btcec/v2"
 
 	"github.com/trustbloc/sidetree-go/pkg/jws"
 )
