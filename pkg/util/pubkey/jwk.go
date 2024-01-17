@@ -14,8 +14,8 @@ import (
 	"reflect"
 
 	"github.com/btcsuite/btcd/btcec/v2"
-	gojose "github.com/square/go-jose/v3"
-	"github.com/square/go-jose/v3/json"
+	gojose "github.com/go-jose/go-jose/v3"
+	"github.com/go-jose/go-jose/v3/json"
 
 	"github.com/trustbloc/sidetree-go/pkg/jws"
 	internal "github.com/trustbloc/sidetree-go/pkg/jwsutil"
