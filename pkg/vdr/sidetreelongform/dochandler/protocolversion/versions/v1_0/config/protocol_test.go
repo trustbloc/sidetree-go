@@ -11,7 +11,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/versions/v1_0/config"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/versions/v1_0/config"
 )
 
 func TestGetProtocolConfig(t *testing.T) {

@@ -10,7 +10,7 @@ import (
 	"crypto"
 
 	docdid "github.com/trustbloc/did-go/doc/did"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/doc"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/doc"
 )
 
 // Opts create did opts.

@@ -25,11 +25,11 @@ import (
 	"github.com/trustbloc/sidetree-go/pkg/versions/1_0/client"
 
 	docdid "github.com/trustbloc/did-go/doc/did"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/doc"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/option/create"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/option/deactivate"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/option/recovery"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/option/update"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/doc"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/option/create"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/option/deactivate"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/option/recovery"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/option/update"
 )
 
 const (

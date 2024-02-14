@@ -11,7 +11,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/common"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/common"
 )
 
 func TestCcVersion_Matches(t *testing.T) {

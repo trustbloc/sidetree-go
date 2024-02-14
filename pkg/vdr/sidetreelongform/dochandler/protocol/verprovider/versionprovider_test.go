@@ -13,7 +13,7 @@ import (
 	"github.com/trustbloc/sidetree-go/pkg/api/protocol"
 	coremocks "github.com/trustbloc/sidetree-go/pkg/mocks"
 
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocol/verprovider"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocol/verprovider"
 )
 
 func TestVersionprovider_New(t *testing.T) {
