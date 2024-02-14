@@ -12,8 +12,8 @@ import (
 
 	"github.com/trustbloc/sidetree-go/pkg/api/protocol"
 
-	vercommon "github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/common"
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/versions/common"
+	vercommon "github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/common"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/versions/common"
 )
 
 type factory interface {

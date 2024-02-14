@@ -9,7 +9,7 @@ SPDX-License-Identifier: Apache-2.0
 
 package clientregistry
 
-import v1_0 "github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/versions/v1_0/client"
+import v1_0 "github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/versions/v1_0/client"
 
 const (
 	// V1_0 ...

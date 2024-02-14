@@ -21,10 +21,10 @@ import (
 	"github.com/trustbloc/sidetree-go/pkg/docutil"
 	"github.com/trustbloc/sidetree-go/pkg/encoder"
 
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocol/nsprovider"
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocol/verprovider"
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/clientregistry"
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/versions/common"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocol/nsprovider"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocol/verprovider"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/clientregistry"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/versions/common"
 )
 
 const (

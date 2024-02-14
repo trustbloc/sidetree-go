@@ -13,7 +13,7 @@ import (
 	"github.com/trustbloc/sidetree-go/pkg/api/protocol"
 	coremocks "github.com/trustbloc/sidetree-go/pkg/mocks"
 
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/versions/common"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/versions/common"
 )
 
 func TestProtocolVersion(t *testing.T) {

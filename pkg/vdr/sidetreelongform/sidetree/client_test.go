@@ -30,12 +30,12 @@ import (
 
 	"github.com/trustbloc/did-go/doc/did"
 	model "github.com/trustbloc/did-go/doc/did/endpoint"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/doc"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/option/create"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/option/deactivate"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/option/recovery"
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/option/update"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/doc"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/option/create"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/option/deactivate"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/option/recovery"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/option/update"
 )
 
 type didResolution struct {

@@ -6,7 +6,7 @@ Update, recover and deactivate operations are currently not supported.
 ```
 import (
 	"crypto"
-	"github.com/trustbloc/did-go/method/sidetreelongform"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform"
 )
 
 vdr, err := sidetreelongform.New()
@@ -29,7 +29,7 @@ ariesdid "github.com/hyperledger/aries-framework-go/pkg/doc/did"
 "github.com/hyperledger/aries-framework-go/pkg/doc/jose"
 vdrapi "github.com/hyperledger/aries-framework-go/pkg/framework/aries/api/vdr"
 
-"github.com/trustbloc/did-go/method/sidetreelongform"
+"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform"
 )
 
 recoveryKey, recoveryKeyPrivateKey, err := ed25519.GenerateKey(rand.Reader)

@@ -15,7 +15,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.8.2
 	github.com/trustbloc/bbs-signature-go v1.0.2-0.20240117165819-e99610e107f4
-	github.com/trustbloc/did-go v1.1.1-0.20240117181910-cb9c77016955
+	github.com/trustbloc/did-go v1.1.1-0.20240214160354-aa500e57d8bd
 	github.com/trustbloc/kms-go v1.1.1-0.20240117181216-c38a74431167
 	golang.org/x/crypto v0.17.0
 )
@@ -28,7 +28,6 @@ require (
 	github.com/consensys/gnark-crypto v0.12.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
-	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/hyperledger/fabric-amcl v0.0.0-20230602173724-9e02669dceb2 // indirect
 	github.com/kilic/bls12-381 v0.1.1-0.20210503002446-7b7597926c69 // indirect

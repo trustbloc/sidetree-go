@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 package deactivate
 
 import (
-	"github.com/trustbloc/did-go/method/sidetreelongform/sidetree/api"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/sidetree/api"
 )
 
 // Opts deactivate did opts.

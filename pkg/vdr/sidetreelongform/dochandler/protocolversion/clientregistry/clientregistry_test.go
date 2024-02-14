@@ -12,9 +12,9 @@ import (
 	"github.com/stretchr/testify/require"
 	coremocks "github.com/trustbloc/sidetree-go/pkg/mocks"
 
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/clientregistry"
-	crmocks "github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/clientregistry/mocks"
-	"github.com/trustbloc/did-go/method/sidetreelongform/dochandler/protocolversion/versions/common"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/clientregistry"
+	crmocks "github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/clientregistry/mocks"
+	"github.com/trustbloc/sidetree-go/pkg/vdr/sidetreelongform/dochandler/protocolversion/versions/common"
 )
 
 //go:generate counterfeiter -o ./mocks/clientfactory.gen.go --fake-name ClientFactory . factory
