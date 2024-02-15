@@ -12,6 +12,7 @@ import (
 	"crypto/ed25519"
 	"crypto/elliptic"
 	"crypto/rand"
+	"crypto/rsa"
 	"fmt"
 	"reflect"
 	"testing"
@@ -257,7 +258,7 @@ func getPublicKeyJWK(pubKey interface{}) (*jws.JWK, error) {
 	}
 
 	switch key := pubKey.(type) {
-	case ed25519.PublicKey:
+	case ed25519.PublicKey, *rsa.PublicKey:
 		// handled automatically by gojose
 	case *ecdsa.PublicKey:
 		ecdsaPubKey := pubKey.(*ecdsa.PublicKey)

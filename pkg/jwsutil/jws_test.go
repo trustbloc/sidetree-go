@@ -11,6 +11,7 @@ import (
 	"crypto/ed25519"
 	"crypto/elliptic"
 	"crypto/rand"
+	"crypto/rsa"
 	"encoding/base64"
 	"errors"
 	"fmt"
@@ -251,6 +252,18 @@ func TestParseJWS_ED25519(t *testing.T) {
 	require.NoError(t, err)
 	require.NotNil(t, parsedJWS)
 	require.Equal(t, jws, parsedJWS)
+}
+
+func TestParseJWS_RSA(t *testing.T) {
+	key, err := rsa.GenerateKey(rand.Reader, 2048)
+	require.NoError(t, err)
+
+	jwk, err := getPublicKeyJWK(&key.PublicKey)
+	require.NoError(t, err)
+
+	require.Equal(t, "RSA", jwk.Kty)
+	require.NotEmpty(t, jwk.E)
+	require.NotEmpty(t, jwk.N)
 }
 
 func TestIsCompactJWS(t *testing.T) {
