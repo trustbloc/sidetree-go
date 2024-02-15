@@ -16,9 +16,6 @@ type JWK struct {
 	Y     string `json:"y"`
 	N     string `json:"n"`
 	E     string `json:"e"`
-	D     string `json:"d"`
-	P     string `json:"p"`
-	Q     string `json:"q"`
 	Nonce string `json:"nonce,omitempty"`
 }
 
