@@ -14,6 +14,11 @@ type JWK struct {
 	Crv   string `json:"crv"`
 	X     string `json:"x"`
 	Y     string `json:"y"`
+	N     string `json:"n"`
+	E     string `json:"e"`
+	D     string `json:"d"`
+	P     string `json:"p"`
+	Q     string `json:"q"`
 	Nonce string `json:"nonce,omitempty"`
 }
 
