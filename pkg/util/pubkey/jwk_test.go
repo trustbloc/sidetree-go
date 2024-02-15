@@ -11,6 +11,7 @@ import (
 	"crypto/ed25519"
 	"crypto/elliptic"
 	"crypto/rand"
+	"crypto/rsa"
 	"testing"
 
 	"github.com/btcsuite/btcd/btcec/v2"
@@ -27,6 +28,17 @@ func TestGetPublicKeyJWK(t *testing.T) {
 		require.NotEmpty(t, jwk)
 		require.Equal(t, "P-256", jwk.Crv)
 		require.Equal(t, "EC", jwk.Kty)
+	})
+
+	t.Run("success RSA-2048", func(t *testing.T) {
+		privateKey, err := rsa.GenerateKey(rand.Reader, 2048)
+		require.NoError(t, err)
+
+		jwk, err := GetPublicKeyJWK(&privateKey.PublicKey)
+		require.NoError(t, err)
+		require.NotEmpty(t, jwk)
+		require.Equal(t, "", jwk.Crv)
+		require.Equal(t, "RSA", jwk.Kty)
 	})
 
 	t.Run("success EC secp256k1 ", func(t *testing.T) {
