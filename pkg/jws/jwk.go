@@ -21,16 +21,26 @@ type JWK struct {
 
 // Validate validates JWK.
 func (jwk *JWK) Validate() error {
-	if jwk.Crv == "" {
-		return errors.New("JWK crv is missing")
-	}
-
 	if jwk.Kty == "" {
 		return errors.New("JWK kty is missing")
 	}
 
-	if jwk.X == "" {
-		return errors.New("JWK x is missing")
+	if jwk.Kty == "RSA" {
+		if jwk.N == "" {
+			return errors.New("JWK n is missing")
+		}
+
+		if jwk.E == "" {
+			return errors.New("JWK e is missing")
+		}
+	} else {
+		if jwk.Crv == "" {
+			return errors.New("JWK crv is missing")
+		}
+
+		if jwk.X == "" {
+			return errors.New("JWK x is missing")
+		}
 	}
 
 	return nil
