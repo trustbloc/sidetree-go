@@ -36,21 +36,42 @@ func (jwk JWK) Y() string {
 	return stringEntry(jwk["y"])
 }
 
+// N is n.
+func (jwk JWK) N() string {
+	return stringEntry(jwk["n"])
+}
+
+// E is e.
+func (jwk JWK) E() string {
+	return stringEntry(jwk["e"])
+}
+
 // Validate will validate JWK properties.
 func (jwk JWK) Validate() error {
 	// TODO: validation of the JWK fields depends on the algorithm (issue-409)
 	// For now check required fields for currently supported algorithms secp256k1, P-256, P-384, P-512 and Ed25519
 
-	if jwk.Crv() == "" {
-		return errors.New("JWK crv is missing")
-	}
-
 	if jwk.Kty() == "" {
 		return errors.New("JWK kty is missing")
 	}
 
-	if jwk.X() == "" {
-		return errors.New("JWK x is missing")
+	if jwk.Kty() == "RSA" {
+		if jwk.N() == "" {
+			return errors.New("JWK n is missing")
+		}
+
+		if jwk.E() == "" {
+			return errors.New("JWK e is missing")
+		}
+	} else {
+		if jwk.Crv() == "" {
+			return errors.New("JWK crv is missing")
+		}
+
+		if jwk.X() == "" {
+			return errors.New("JWK x is missing")
+		}
+
 	}
 
 	return nil

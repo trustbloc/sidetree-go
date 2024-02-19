@@ -120,7 +120,7 @@ func TestValidatePublicKeysErrors(t *testing.T) {
 
 		err = validatePublicKeys(doc.PublicKeys())
 		require.Error(t, err)
-		require.Contains(t, err.Error(), "JWK crv is missing")
+		require.Contains(t, err.Error(), "JWK kty is missing")
 	})
 
 	t.Run("pkB58 key with jwk type", func(t *testing.T) {

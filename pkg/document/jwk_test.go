@@ -71,4 +71,25 @@ func TestValidate(t *testing.T) {
 		require.Error(t, err)
 		require.Contains(t, err.Error(), "JWK x is missing")
 	})
+
+	t.Run("missing n", func(t *testing.T) {
+		jwk := JWK{
+			"kty": "RSA",
+		}
+
+		err := jwk.Validate()
+		require.Error(t, err)
+		require.Contains(t, err.Error(), "JWK n is missing")
+	})
+
+	t.Run("missing e", func(t *testing.T) {
+		jwk := JWK{
+			"kty": "RSA",
+			"n":   "nn",
+		}
+
+		err := jwk.Validate()
+		require.Error(t, err)
+		require.Contains(t, err.Error(), "JWK e is missing")
+	})
 }
