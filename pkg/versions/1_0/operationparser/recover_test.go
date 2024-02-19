@@ -148,7 +148,7 @@ func TestParseRecoverOperation(t *testing.T) {
 
 		op, err := parser.ParseRecoverOperation(request, false)
 		require.Error(t, err)
-		require.Contains(t, err.Error(), "validate signed data for recovery: signing key validation failed: JWK crv is missing")
+		require.Contains(t, err.Error(), "validate signed data for recovery: signing key validation failed: JWK kty is missing")
 		require.Nil(t, op)
 	})
 
