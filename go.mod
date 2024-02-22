@@ -14,9 +14,9 @@ require (
 	github.com/piprate/json-gold v0.5.1-0.20230111113000-6ddbe6e6f19f
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.8.2
-	github.com/trustbloc/bbs-signature-go v1.0.2-0.20240117165819-e99610e107f4
-	github.com/trustbloc/did-go v1.1.1-0.20240214160354-aa500e57d8bd
-	github.com/trustbloc/kms-go v1.1.1-0.20240117181216-c38a74431167
+	github.com/trustbloc/bbs-signature-go v1.0.2
+	github.com/trustbloc/did-go v1.2.0
+	github.com/trustbloc/kms-go v1.1.1
 	golang.org/x/crypto v0.17.0
 )
 
