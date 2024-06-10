@@ -15,8 +15,8 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.8.2
 	github.com/trustbloc/bbs-signature-go v1.0.2
-	github.com/trustbloc/did-go v1.2.0
-	github.com/trustbloc/kms-go v1.1.1
+	github.com/trustbloc/did-go v1.2.1
+	github.com/trustbloc/kms-go v1.1.2
 	golang.org/x/crypto v0.17.0
 )
 
@@ -51,4 +51,6 @@ require (
 	rsc.io/tmplfunc v0.0.3 // indirect
 )
 
-go 1.21
+go 1.22
+
+toolchain go1.22.2
