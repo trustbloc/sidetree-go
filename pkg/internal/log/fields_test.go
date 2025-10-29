@@ -36,7 +36,7 @@ func TestStandardFields(t *testing.T) {
 		WithTransactionTime(1234), WithTransactionNumber(6789), WithPatch(o), WithIsBatch(true),
 	)
 
-	t.Logf(buf.String())
+	t.Logf("%s", buf.String())
 	l := unmarshalLogData(t, buf.Bytes())
 
 	require.Equal(t, `Some message`, l.Msg)

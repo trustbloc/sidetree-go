@@ -12,9 +12,9 @@ import (
 	"fmt"
 
 	"github.com/multiformats/go-multihash"
-
 	"github.com/trustbloc/sidetree-go/pkg/canonicalizer"
 	"github.com/trustbloc/sidetree-go/pkg/encoder"
+	"github.com/trustbloc/sidetree-go/pkg/util/hash"
 )
 
 // ComputeMultihash will compute the hash for the supplied bytes using multihash code.
@@ -53,7 +53,7 @@ func IsSupportedMultihash(encodedMultihash string) bool {
 		return false
 	}
 
-	return multihash.ValidCode(code)
+	return hash.IsValidCode(code)
 }
 
 // IsComputedUsingMultihashAlgorithms checks to see if the given encoded hash has been hashed using one of supplied code.
