@@ -6,6 +6,8 @@ module github.com/trustbloc/sidetree-go
 
 go 1.25.3
 
+replace github.com/piprate/json-gold v0.5.1-0.20230111113000-6ddbe6e6f19f => github.com/trustbloc/json-gold v0.5.2-0.20241206130328-d2135d9f36a8
+
 require (
 	github.com/btcsuite/btcd/btcec/v2 v2.3.6
 	github.com/btcsuite/btcutil v1.0.3-0.20201208143702-a53e38424cce
@@ -13,11 +15,11 @@ require (
 	github.com/go-jose/go-jose/v3 v3.0.4
 	github.com/multiformats/go-multibase v0.2.0
 	github.com/multiformats/go-multihash v0.2.3
-	github.com/piprate/json-gold v0.7.0
+	github.com/piprate/json-gold v0.5.1-0.20230111113000-6ddbe6e6f19f
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.11.1
 	github.com/trustbloc/bbs-signature-go v1.0.3
-	github.com/trustbloc/did-go v1.2.1
+	github.com/trustbloc/did-go v1.3.5
 	github.com/trustbloc/kms-go v1.2.3
 	golang.org/x/crypto v0.43.0
 )
