@@ -10,12 +10,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/multiformats/go-multihash"
-
 	"github.com/trustbloc/sidetree-go/pkg/api/operation"
 	"github.com/trustbloc/sidetree-go/pkg/canonicalizer"
 	"github.com/trustbloc/sidetree-go/pkg/hashing"
 	"github.com/trustbloc/sidetree-go/pkg/patch"
+	"github.com/trustbloc/sidetree-go/pkg/util/hash"
 	"github.com/trustbloc/sidetree-go/pkg/versions/1_0/model"
 )
 
@@ -102,7 +101,7 @@ func validateCreateRequest(info *CreateRequestInfo) error {
 		return errors.New("cannot provide both opaque document and patches")
 	}
 
-	supported := multihash.ValidCode(uint64(info.MultihashCode))
+	supported := hash.IsValidCode(uint64(info.MultihashCode))
 
 	if !supported {
 		return fmt.Errorf("multihash[%d] not supported", info.MultihashCode)
