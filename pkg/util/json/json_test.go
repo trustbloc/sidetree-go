@@ -8,7 +8,6 @@ package json
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"testing"
 
@@ -62,40 +61,48 @@ func TestMarshalCanonical(t *testing.T) {
 	})
 
 	t.Run("Marshal struct error", func(t *testing.T) {
-		reset := SetJSONMarshaler(func(map[string]interface{}) (bytes []byte, e error) {
-			return nil, errors.New("injected marshal error")
-		})
-		defer reset()
+		originalMarshalJSONMap := marshalJSONMap
+		defer func() { marshalJSONMap = originalMarshalJSONMap }()
+
+		marshalJSONMap = func(m map[string]interface{}) ([]byte, error) {
+			return nil, fmt.Errorf("injected marshal error")
+		}
 
 		_, err := MarshalCanonical(value1)
 		require.Error(t, err)
 	})
 
 	t.Run("Unmarshal struct error", func(t *testing.T) {
-		reset := SetJSONUnmarshaler(func(bytes []byte) (map[string]interface{}, error) {
-			return nil, errors.New("injected marshal error")
-		})
-		defer reset()
+		originalUnmarshalJSONMap := unmarshalJSONMap
+		defer func() { unmarshalJSONMap = originalUnmarshalJSONMap }()
+
+		unmarshalJSONMap = func(bytes []byte) (map[string]interface{}, error) {
+			return nil, fmt.Errorf("injected unmarshal error")
+		}
 
 		_, err := MarshalCanonical(value1)
 		require.Error(t, err)
 	})
 
 	t.Run("Marshal array error", func(t *testing.T) {
-		reset := SetJSONArrayMarshaler(func([]map[string]interface{}) (bytes []byte, e error) {
-			return nil, errors.New("injected marshal error")
-		})
-		defer reset()
+		originalMarshalJSONArray := marshalJSONArray
+		defer func() { marshalJSONArray = originalMarshalJSONArray }()
+
+		marshalJSONArray = func(a []map[string]interface{}) ([]byte, error) {
+			return nil, fmt.Errorf("injected marshal error")
+		}
 
 		_, err := MarshalCanonical([]*testData{value1, value2})
 		require.Error(t, err)
 	})
 
 	t.Run("Unmarshal array error", func(t *testing.T) {
-		reset := SetJSONArrayUnmarshaler(func(bytes []byte) ([]map[string]interface{}, error) {
-			return nil, errors.New("injected marshal error")
-		})
-		defer reset()
+		originalUnmarshalJSONArray := unmarshalJSONArray
+		defer func() { unmarshalJSONArray = originalUnmarshalJSONArray }()
+
+		unmarshalJSONArray = func(bytes []byte) ([]map[string]interface{}, error) {
+			return nil, fmt.Errorf("injected unmarshal error")
+		}
 
 		_, err := MarshalCanonical([]*testData{value1, value2})
 		require.Error(t, err)
@@ -117,10 +124,12 @@ func TestMarshalIndentCanonical(t *testing.T) {
 	})
 
 	t.Run("Marshal error", func(t *testing.T) {
-		reset := SetJSONMarshaler(func(m map[string]interface{}) (bytes []byte, e error) {
-			return nil, errors.New("injected marshal error")
-		})
-		defer reset()
+		originalMarshalJSONMap := marshalJSONMap
+		defer func() { marshalJSONMap = originalMarshalJSONMap }()
+
+		marshalJSONMap = func(m map[string]interface{}) ([]byte, error) {
+			return nil, fmt.Errorf("injected marshal error")
+		}
 
 		_, err := MarshalIndentCanonical(value1, "", " ")
 		require.Error(t, err)
@@ -155,13 +164,14 @@ func TestGetCanonicalContent(t *testing.T) {
 	})
 
 	t.Run("Marshal error", func(t *testing.T) {
+		originalMarshalJSONMap := marshalJSONMap
+		defer func() { marshalJSONMap = originalMarshalJSONMap }()
+
+		marshalJSONMap = func(m map[string]interface{}) ([]byte, error) {
+			return nil, fmt.Errorf("marshal error")
+		}
+
 		value1 := []byte(`{"field1":"value1","field2":"value2"}`)
-
-		reset := SetJSONMarshaler(func(m map[string]interface{}) (bytes []byte, e error) {
-			return nil, errors.New("injected marshal error")
-		})
-		defer reset()
-
 		_, err := getCanonicalContent(value1)
 		require.Error(t, err)
 	})
